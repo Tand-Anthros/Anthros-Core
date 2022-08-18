@@ -123,7 +123,7 @@ def get_ip():
     conn.request("GET", "/ip")
     return conn.getresponse().read().decode()
 
-def test_2():
+def test_3():
     return None
 
 vars = locals()
