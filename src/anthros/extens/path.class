@@ -1,0 +1,83 @@
+r'''Является ссылкой на какой либо объект. Нужен для гибкой работы с пакетами и удобного редактирования ссылок, может быть представлен в виде файла, хотя для того и не расчитан'''
+import sys
+
+
+def __init__(self, var:('str', 'list')):
+    r'''Отвечает за создание класса'''
+    if type(var).__name__ == 'str':
+        _var = ['']
+        i = 0
+        for sb in var:
+            if sb not in ['\\', '/']:
+                _var[i] += sb
+            else:
+                _var.append('')
+                i += 1
+        var = _var
+
+    self.list = var
+
+
+def __str__(self):
+    r'''Отвечает за представление класса как строки'''
+    return simple.slash_os().join(self.list)
+
+
+def __repr__(self):
+    r'''Отвечает за строчное представление класса внутри массива'''
+    return '"' + simple.slash_os().join(self.list) + '"'
+
+
+def __len__(self):
+    r'''Возвращает длинну ссылки в виде числа (за единицу считается сам файл и каждый пакет в который он вложен)'''
+    return len(self.list)
+
+
+def __getitem__(self, var: 'int'):
+    r'''Возвращает название эллемента в цепочке ссылки'''
+    return self.list[var]
+
+
+def __add__(self, var: ('str', 'list', 'path')):
+    r'''Позволяет добавить эллемент в конец ссылки'''
+    if type(var).__name__ in ['str', 'list']: var = path(var)
+    return path(self.list + var.list)
+
+
+def __sub__(self, var:('int', 'str', 'list', 'path')):
+    '''Вычитает часть ссылки с конца, если не удасться, попытаеться вечесть с начала, иначе ошибка'''
+    if type(var).__name__ == 'int':
+        if var < len(self.list): return path(self.list[:len(self.list) - var])
+        else: raise Exception('path length is less than number passed')
+    if type(var).__name__ in ['str', 'list']: var = path(var)
+    var = copy.deepcopy(var).list
+    out = copy.copy(self.list)
+
+    if len(var) == 0 or len(var) == 1 and var[0] in ['']: return path(out)
+    if len(var) == 1:
+        try: out.pop(out.index(var[0]))
+        except:
+            raise Exception('the path does not contain the passed value')
+
+    out.reverse()
+    var.reverse()
+
+    i_out = 0
+    i_var = 0
+    while i_out < len(out):
+        if i_var == len(var) - 1: break
+        if out[i_out] == var[i_var]: i_var += 1
+        i_out += 1
+
+    if i_var + 1 != len(var):
+        raise Exception('the path does not contain the passed value')
+    i_var += 1
+
+    out = out[:i_out + 1 - len(var)] + out[i_out + 1:]
+    out.reverse()
+    return path(out)
+
+
+def name(self):
+    r'''возврщает имя файла'''
+    return self.list[len(self.list) - 1]

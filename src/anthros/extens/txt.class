@@ -1,0 +1,18 @@
+def __init__(self, pos: 'path'):
+    pos = simple.smart_path(str(pos))
+    if pos == None: raise Exception('folder does not exist')
+    pos = path(pos)
+
+    file = open(str(pos), 'r')
+    self.pos = pos
+    self.content = file.read()
+    file.close()
+
+def __call__(self, var):
+    return self.content
+
+def __str__(self):
+    return self.content
+
+def read(self):
+    return self.content

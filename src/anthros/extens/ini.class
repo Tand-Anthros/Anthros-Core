@@ -1,0 +1,56 @@
+r'''Представляет *.ini файлы, вы можете передать как строку из ini файла, так и расположение (обязательно *.path)'''
+def __init__(self, obj: ('str', 'path')):
+    self.start_pos = str(obj)
+    if simple.type(obj) == 'path' or simple.file_exist(str(obj)):
+        obj = manager.open_file(str(obj))
+
+    temp_pos = info.project_path() + simple.slash_os() + '__pycache__' + simple.slash_os() + 'temp.ini'
+    file = manager.save_file(temp_pos, obj, rewrite = True)
+
+    save_pos = simple.pos_switch(str(path(temp_pos) - 1))
+    read_conf = configparser.ConfigParser()
+    read_conf.read(temp_pos, encoding = 'utf-8')
+    simple.pos_switch(save_pos)
+
+    self.dict = dict()
+    for section in read_conf.keys():
+        _out = dict()
+        for key in read_conf[section].keys():
+            _out[key] = read_conf[section][key]
+        self.dict[section] = _out
+
+    manager.remove(temp_pos)
+
+def __getitem__(self, item):
+    return copy.deepcopy(self.dict[item])
+
+def __setitem__(self, item, value: 'dict'):
+    self.dict[item] = value
+
+def __file__(self):
+    out = ''
+    for section in self.dict.keys():
+        if section != 'DEFAULT': out += f'[{section}]\n'
+        for key in self.dict[section].keys():
+            out += f'{key} = {self.dict[section][key]}\n'
+    return out[:len(out) - 1]
+
+def __str__(self):
+    return str(self.dict)
+
+def pop(self, item):
+    return self.dict.pop(item)
+
+def base(self):
+    r'''Возвращает этот объект в виде двумерного словаря'''
+    return copy.deepcopy(self.dict)
+
+def save(self, path: ('str', 'path') = None, rewrite = False):
+    if not path: path = self.start_pos
+    manager.save_file(str(path), self.__file__(), rewrite = rewrite)
+
+def keys(self):
+    return self.dict.keys()
+
+def get(self, item):
+    return self.dict.get(item)

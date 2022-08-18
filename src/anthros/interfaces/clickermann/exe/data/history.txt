@@ -1,0 +1,3 @@
+﻿E:\structure\root\projects\clickermann\pj\oxy\screenshot.cms
+E:\structure\root\projects\clickermann\AcceptAuct.cms
+E:\structure\root\projects\clickermann\AcceptMail.cms

@@ -1,0 +1,120 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/anthros/__init__.py
+src/anthros/core.py
+src/anthros/extens/__init__.py
+src/anthros/extens/data.class
+src/anthros/extens/fold.class
+src/anthros/extens/imports.pre
+src/anthros/extens/imports.pst
+src/anthros/extens/ini.class
+src/anthros/extens/mp3.class
+src/anthros/extens/path.class
+src/anthros/extens/txt.class
+src/anthros/interfaces/__init__.py
+src/anthros/interfaces/console.py
+src/anthros/interfaces/clickermann/__init__.py
+src/anthros/interfaces/clickermann/get.py
+src/anthros/interfaces/clickermann/exe/Clickermann.exe
+src/anthros/interfaces/clickermann/exe/__init__.py
+src/anthros/interfaces/clickermann/exe/backup.cms
+src/anthros/interfaces/clickermann/exe/errorlog.txt
+src/anthros/interfaces/clickermann/exe/help.chm
+src/anthros/interfaces/clickermann/exe/ioport.dll
+src/anthros/interfaces/clickermann/exe/data/__init__.py
+src/anthros/interfaces/clickermann/exe/data/config.ini
+src/anthros/interfaces/clickermann/exe/data/config_editor.ini
+src/anthros/interfaces/clickermann/exe/data/const.txt
+src/anthros/interfaces/clickermann/exe/data/history.txt
+src/anthros/interfaces/clickermann/exe/data/history_editor.txt
+src/anthros/interfaces/clickermann/exe/data/keywords.txt
+src/anthros/interfaces/clickermann/exe/data/pause.bmp
+src/anthros/interfaces/clickermann/exe/data/play.bmp
+src/anthros/interfaces/clickermann/exe/data/rec.bmp
+src/anthros/interfaces/clickermann/exe/data/lang/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/en/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/en/gui.txt
+src/anthros/interfaces/clickermann/exe/data/lang/en/qinsert_menu.txt
+src/anthros/interfaces/clickermann/exe/data/lang/en/templates/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/en/templates/for.txt
+src/anthros/interfaces/clickermann/exe/data/lang/en/templates/if_else.txt
+src/anthros/interfaces/clickermann/exe/data/lang/en/templates/if_pixel_in.txt
+src/anthros/interfaces/clickermann/exe/data/lang/en/templates/sub.txt
+src/anthros/interfaces/clickermann/exe/data/lang/ru/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/ru/gui.txt
+src/anthros/interfaces/clickermann/exe/data/lang/ru/qinsert_menu.txt
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/ISKEYDOWN
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Log
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/SUB
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/SUB с параметрами
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Ожидание времени
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Переключатель
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Убить процесс
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/COLORMODE
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/COLORMODE (Простой способ делать снимки)
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/IF_PICTURE_IN
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/IF_PIXEL_IN
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/PXL
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/PXLREPLACE
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/SCANPICTURE
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/SCANPICTURE (пример)
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/SCANPXL
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/SCANPXL (пример)
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/Ожидание картинки
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/Ожидание картинки с таймером
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/Ожидание цвета
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Графика/Ожидание цвета IF_PIXEL_IN
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Alt+
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Ctrl+
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Ctrl+C
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Ctrl+V
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Ctrl+X
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/KeyDown + KeyUp
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/LDown + LUp
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/Shift+
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Комбинации клавиш/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/FOR
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/IF
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/IF_ELSE
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/SWITCH
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/THREAD - Поток
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/WHILE
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/__init__.py
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/Вывод массива в лог
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/Ожидание + таймаут
+src/anthros/interfaces/clickermann/exe/data/lang/ru/templates/Циклы, условия/Условие с таймером
+src/anthros/interfaces/clickermann/exe/data/sound/__init__.py
+src/anthros/interfaces/clickermann/exe/data/sound/error.wav
+src/anthros/interfaces/clickermann/exe/data/sound/load.wav
+src/anthros/interfaces/clickermann/exe/data/sound/pause.wav
+src/anthros/interfaces/clickermann/exe/data/sound/play.wav
+src/anthros/interfaces/clickermann/exe/data/sound/record.wav
+src/anthros/interfaces/clickermann/exe/data/sound/silence.wav
+src/anthros/interfaces/clickermann/exe/data/sound/stop.wav
+src/anthros/interfaces/clickermann/exe/projects/__init__.py
+src/anthros/interfaces/clickermann/exe/projects/get/__init__.py
+src/anthros/interfaces/clickermann/exe/projects/get/out.txt
+src/anthros/interfaces/clickermann/exe/projects/get/screen_height.cms
+src/anthros/interfaces/clickermann/exe/projects/get/screen_width.cms
+src/anthros/project/__init__.py
+src/anthros/project/conf.ini
+src/anthros/project/manifest.ini
+src/anthros/project/run.bat
+src/anthros/project/run.py
+src/anthros/project/test.py
+src/anthros/tools/__init__.py
+src/anthros/tools/assembly.py
+src/anthros/tools/convert.py
+src/anthros/tools/info.py
+src/anthros/tools/manager.py
+src/anthros/tools/represent.py
+src/anthros/tools/simple.py
+src/anthros/tools/stdinout.py
+src/anthros_core.egg-info/PKG-INFO
+src/anthros_core.egg-info/SOURCES.txt
+src/anthros_core.egg-info/dependency_links.txt
+src/anthros_core.egg-info/top_level.txt

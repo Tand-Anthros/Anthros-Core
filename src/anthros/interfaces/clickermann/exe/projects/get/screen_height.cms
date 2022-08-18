@@ -1,0 +1,5 @@
+﻿#autorun
+
+TFWRITE("out.txt", $_ymax)
+
+HALT(1)

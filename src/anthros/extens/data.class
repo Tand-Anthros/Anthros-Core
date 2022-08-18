@@ -1,0 +1,40 @@
+r'''Является временным представлением для данных в интересах оптимизации. Может быть преобразован в конечный, подробнее в функции get(). Не может быть представлен в виде файла'''
+def __init__(self, pos: 'path'):
+    pos = simple.smart_path(str(pos))
+    if pos == None: raise Exception('file does not exist')
+    pos = path(pos)
+
+    global types, sub_types
+    for i in sub_types:
+        try: types.pop(i)
+        except: pass
+
+    self.pos = pos
+    try: self.extens = pos.name().split('.')[1]
+    except: self.extens = ''
+
+    if self.extens in types.keys():
+        self.content = types[self.extens]
+    #elif self.extens in ['py', 'def', 'class']:
+    #    self.content = types['_' + self.extens]
+    else:
+        self.content = None
+
+def __str__(self):
+    return f'data.{type(self.content).__name__}.path("{self.pos}")'
+
+def __repr__(self):
+    return f'data.{type(self.content).__name__}.path("{self.pos}")'
+
+def get(self):
+    r'''Возвращает объект класса, который представляет. Если такого класса нет, вернёт сам себя'''
+    if self.content == None: return self
+    else: return self.content(self.pos)
+
+def name(self):
+    r'''возвращает имя файла'''
+    return self.pos.name()
+
+def type(self):
+    r'''возвращает тип объекта, который представляет'''
+    return self.content

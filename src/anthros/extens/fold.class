@@ -1,0 +1,45 @@
+r'''создаёт из папки объект, который можно использовать как словарь или как объект с атрибутами
+*Внимание, не будет корректно работать, если в одной папке будет два файла с одинаковым названием!'''
+def __init__(self, pos: 'path'): #Поправить недоработку с одинаковыми названиями
+    pos = simple.smart_path(str(pos))
+    if pos == None: raise Exception('folder does not exist')
+    pos = path(pos)
+    self.pos = pos
+
+    self.folders = dict()
+    self.files = dict()
+    for elem in os.listdir(str(self.pos)):
+            if os.path.isdir(str(self.pos + elem)):
+                try: self.folders[elem] = fold(self.pos + elem)
+                except: self.folders[elem] = stdinout.exception(sys.exc_info())
+            else:
+                try: self.files[elem.split('.')[0]] = data(self.pos + elem).get()
+                except: self.files[elem.split('.')[0]] = stdinout.exception(sys.exc_info())
+
+def __path__(self):
+    return str(self.pos)
+
+def __call__(self):
+    return self.__dir__()
+
+def __str__(self):
+    return f'fold({", ".join(self.folders.keys())}, {", ".join(self.files.keys())})'
+
+def __dir__(self):
+    return list(self.folders.keys()) + list(self.files.keys())
+
+def __getattr__(self, attr):
+    if attr in self.folders.keys(): return self.folders[attr]
+    elif attr in self.files.keys(): return self.files[attr]
+    raise Exception('name not in fold')
+
+def __getitem__(self, item):
+    if item in self.folders.keys(): return self.folders[item]
+    elif item in self.files.keys(): return self.files[item]
+    raise Exception('name not in fold')
+
+def list(self):
+    out = []
+    for folder in self.folders.keys(): out.append(folder)
+    for file in self.files.keys(): out.append(file)
+    return out

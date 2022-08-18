@@ -1,0 +1,33 @@
+def __init__(self, pos: 'path'):
+    pos = simple.smart_path(str(pos))
+    if pos == None: raise Exception('file does not exist')
+    pos = path(pos)
+    self.pos = pos
+
+    pj_pos = path(info.project_path())
+    ac_pos = path(info.ac_path())
+    try:
+        rel_pos = pos - pj_pos
+        sys_pos = pj_pos
+    except:
+        try:
+            rel_pos = pos - ac_pos
+            sys_pos = ac_pos
+        except: raise Exception('script relative location not found')
+
+    self.player = pyglet.media.Player()
+    self.sys_pos = sys_pos
+
+    save_pos = simple.pos_switch(str(sys_pos))
+    self.sound = pyglet.media.load(str(rel_pos))
+    self.player.queue(self.sound.get_queue_source())
+    simple.pos_switch(save_pos)
+
+def play(self):
+    self.player.play()
+
+def pause(self):
+    self.player.pause()
+
+def stop(self):
+    self.player.pause()

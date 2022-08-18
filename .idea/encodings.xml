@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/_class.class" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/data.class" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/fold.class" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/imports.pre" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/ini.class" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/path.class" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/anthros/extens/txt.class" charset="windows-1251" />
+  </component>
+</project>

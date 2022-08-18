@@ -1,0 +1,5 @@
+﻿E:\projects\anthros-core\release\src\anthros\interfaces\clickermann\exe\projects\get\screen_width.cms
+E:\structure\root\projects\clickermann\pj\elden\test.cms
+E:\structure\root\projects\clickermann\pj\elden\moovset_plus.cms
+E:\structure\root\projects\clickermann\pj\oxy\character_change.cms
+E:\structure\root\projects\clickermann\pj\oxy\screenshot.cms
