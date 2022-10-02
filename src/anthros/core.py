@@ -2,11 +2,8 @@ from interfaces import console, clickermann
 from tools import assembly, info, manager, represent, simple, stdinout, convert
 import os, sys, threading, copy, time
 
-<<<<<<< HEAD
 #123    
-=======
 #321
->>>>>>> main
 
 r'''
 Цели для выполнения АС:
