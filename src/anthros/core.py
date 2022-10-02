@@ -2,15 +2,11 @@ from interfaces import console, clickermann
 from tools import assembly, info, manager, represent, simple, stdinout, convert
 import os, sys, threading, copy, time
 
-#123    
-#321
-
 r'''
 Цели для выполнения АС:
 [Tand]
     - Доделать документацию по АС
     - Перевести доки на английский
-    - Расширить reinstall заставить добавлять его все недостающие части АС, которые удаляются после запуска
     - Разработать систему скриптинга АС
     - Сделать систему тестов
     - Добавить args и dir первой командой или что то с этим придумать
@@ -25,6 +21,8 @@ r'''
     - Реализовать парсер Инкриментов (Парсер достающий информацию из строки по начальному и конечному инкременту, должен возвращать список с отделённым эллементом)
     - Сделать extens ini.class
 '''
+
+#=> {'[Tand]': '- Доделать документацию по АС\n...', '[Net-Panner]': '- Создать модуль parser в tools\n...'}
 
 class help():
     __doc__ = manager.open_file(simple.slash_os().join([info.ac_path(), 'docs', 'rus', 'help.md']))
