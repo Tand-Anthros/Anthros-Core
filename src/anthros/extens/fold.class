@@ -10,11 +10,9 @@ def __init__(self, pos: 'path'): #ѕоправить недоработку с одинаковыми названи€ми
     self.files = dict()
     for elem in os.listdir(str(self.pos)):
             if os.path.isdir(str(self.pos + elem)):
-                try: self.folders[elem] = fold(self.pos + elem)
-                except: self.folders[elem] = stdinout.exception(sys.exc_info())
+                self.folders[elem] = fold(self.pos + elem)
             else:
-                try: self.files[elem.split('.')[0]] = data(self.pos + elem).get()
-                except: self.files[elem.split('.')[0]] = stdinout.exception(sys.exc_info())
+                self.files[elem.split('.')[0]] = data(self.pos + elem).get()
 
 def __path__(self):
     return str(self.pos)

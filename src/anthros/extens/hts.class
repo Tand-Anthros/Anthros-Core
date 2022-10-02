@@ -1,4 +1,5 @@
 def __init__(self, filename: 'path'):
+	global types
 	if type(filename).__name__ == 'path':
 		filename = str(filename)
 	if type(filename) != str:

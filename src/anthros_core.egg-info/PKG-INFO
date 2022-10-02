@@ -15,7 +15,7 @@ Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-[[RUS]](docs/RUS.md)
+[[RUS]](src/anthros/docs/rus/README.md)
 
 # Welcome to Anthros-core!
 
