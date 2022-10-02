@@ -2,6 +2,8 @@ from interfaces import console, clickermann
 from tools import assembly, info, manager, represent, simple, stdinout, convert
 import os, sys, threading, copy, time
 
+#321
+
 r'''
 Цели для выполнения АС:
 [Tand]
