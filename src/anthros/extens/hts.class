@@ -1,0 +1,49 @@
+def __init__(self, filename: 'path'):
+	global types
+	if type(filename).__name__ == 'path':
+		filename = str(filename)
+	if type(filename) != str:
+		print("ERR: invalid parameter")
+		
+	file = open(filename, "r")
+	dictionary = dict()
+	
+	dictionary['DEFAULT'] = ''
+	category = 'DEFAULT'
+	counter = 0
+	line = file.readline()
+	while(len(line) > 0):
+		#commentary
+		if line[0] == '#':
+			pass
+		#category
+		elif line[0] == '[':
+			category = ''
+			for i in range(1, len(line)):
+				if line[i] == ']':
+					break
+				else:
+					category += line[i]
+			dictionary[category] = ''
+		#empty string
+		elif line[0] == '\n':
+			pass
+		#filling dictionary
+		elif category != '':
+			key = line
+			dictionary[category] += key
+		#check for '=' symbol
+		for i in range(len(line)):
+			if line[i] == '=':
+				has_symbol = True
+		#check for commentaries
+		for i in range(len(line)):
+			if line[i] == '#' or line[i] == ';':
+				has_commentaries = True
+		line = file.readline()
+	if (dictionary['DEFAULT'] == ''):
+		del dictionary['DEFAULT']
+	self.dictionary = dictionary
+
+def get_dict(self):
+	return self.dictionary

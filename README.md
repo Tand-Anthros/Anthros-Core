@@ -1,4 +1,4 @@
-[[RUS]](docs/RUS.md)
+[[RUS]](src/anthros/docs/rus/README.md)
 
 # Welcome to Anthros-core!
 

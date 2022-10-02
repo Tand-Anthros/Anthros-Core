@@ -1,5 +1,5 @@
 from tools import simple, info, stdinout
-import os, shutil, sys
+import os, shutil, sys, pickle
 
 def remove(path: 'str'):
     r'''Удаляет файл или папку по переданному раположению'''
@@ -25,7 +25,7 @@ def open_stream(link: 'str', mode = 'r'):
         simple.pos_switch(save_pos)
     return file
 
-def open_file(link: 'str', stream: 'boolean' = False):
+def open_file(link: 'str', stream: bool = False):
     r'''Возвращает данные из файла в виде строки
     *При stream = True вернёт io.stream объект'''
     pos = link.split(simple.slash_os())
@@ -38,14 +38,16 @@ def open_file(link: 'str', stream: 'boolean' = False):
     simple.pos_switch(**save_pos)
     return file
 
-def save_file(link: 'str', fill: 'str', rewrite: 'booldean' = False):
+def save_file(link: 'str', fill: 'str', rewrite: bool = False):
     r'''Записывает файл по указанному пути с переданными данными
     *Если переменная rewrite = True перезапишет существующий файл'''
     if rewrite: mode = 'w'
     else: mode = 'x'
 
     pos = link.split(simple.slash_os())
-    save_pos = simple.pos_switch(simple.slash_os().join(pos[:len(pos) - 1]))
+    temp_pos = simple.slash_os().join(pos[:len(pos) - 1])
+    if simple.file_exist(temp_pos) != 'folder': make_folders(temp_pos)
+    save_pos = simple.pos_switch(temp_pos)
     def _save_file(link, mode):
         file = open_stream(link, mode = mode)
         file.write(fill)
@@ -63,10 +65,12 @@ def save_file(link: 'str', fill: 'str', rewrite: 'booldean' = False):
         raise
     simple.pos_switch(**save_pos)
 
-def pickling(link: (str, 'link'), fill):
+pickling_args = (str, 'link')
+def pickling(link: pickling_args, fill):
     pickle.dump(fill, open(link, 'bw'))
 
-def unpickling(link: (str, 'link')):
+unpickling_args = (str, 'link')
+def unpickling(link: unpickling_args):
     try:
         file = pickle.load(open(link, 'br'))
     except:
@@ -80,7 +84,7 @@ def open_with(var, choice = False):
 *Если вы передаёте объект, то он будет сохранён как временый файл
  Убедитесь, что ваш объект может быть представлен как строка или имет для этого метод __file__()'''
     if simple.type(var) != 'str':
-        path = simple.slash_os().join([info.project_path(), '__pycache__', 'temp.' + simple.type(var)])
+        path = simple.slash_os().join([info.project_path(), 'ac_temp.' + simple.type(var)])
         try: save_file(path, getattr(var, '__file__'))
         except: save_file(path, str(var))
         var = path
