@@ -1,4 +1,4 @@
-[[RUS]](https://github.com/Thunder-Light/Anthros-Core/tree/main/src/anthros/docs/rus/README.md)
+[[RUS]](https://github.com/Thunder-Light/Anthros-Core/tree/main/src/anthros/docs/rus/main.md)
 
 ## Welcome to Anthros-Core!
 > Everyone together - everything is simple</br>
