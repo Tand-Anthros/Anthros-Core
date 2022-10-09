@@ -116,7 +116,7 @@ def get_blocks(fill: ('str'), tabs: ('list', 'tuple', 'str')):
     outputl.append(sublist)
     return outputl
 
-
+'''
 anthros.interfaces.console.clear_screen()
 tab = '   '#3
 line = '\n' + tab + 'lolly = hunter\n'
@@ -126,3 +126,4 @@ line +=  '\n' + tab + 'spooky != shish'
 print('__line__\n', line)
 a = get_blocks(line, '1, 2, 3, 4')
 print('\n\n__get_blocks__\n\n', a, '\n\n\n')
+'''
