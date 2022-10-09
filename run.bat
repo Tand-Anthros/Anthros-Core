@@ -1,2 +1,1 @@
-cd %~dp0
-py tests\run.py
+py %~dp0\tests\run.py

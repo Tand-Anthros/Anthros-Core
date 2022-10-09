@@ -14,9 +14,9 @@ r'''
     - Реализовать subs
     - Нужно что то придумать с ошибками
     - Добавить установку сторонних библиотек с подтверждением пользователя или убрать pyglet
+    - Сделать установку нужных модулей при первом запуске с локальных whl файлов
     - Реализовать тесты для АС
 [Net-Panner]
-    - Релазивать парсер блоков (Парсер, создающий единую строку из блока, записывающий множество этих блоков в список)
     - Реализовать парсер Инкриментов (Парсер достающий информацию из строки по начальному и конечному инкременту, должен возвращать список с отделённым эллементом)
     - Сделать extens ini.class
 '''
@@ -374,12 +374,12 @@ class ac():
     r'''Выступает в роли окружения, из этого объекта вы можете вызвать свои файлы или tools, extens, interfaces
     *Сейчас AC воспринимает только "абсолютные пути атрибутов", но в будущем вы сможете использовать сокращения'''
     def __init__(self):
-        save_pos = simple.pos_switch(stdinout.var('pj_pos', namespace='__ac__'))
+        save_pos = simple.pos_switch(info.project_path())
         global _ac_extens, _ac_tools, _ac_interfaces, help
         #if type(help()).__name__ != 'list': help = help()
         _extens, _tools, _interfaces, _help = _ac_extens(), _ac_tools(), _ac_interfaces(), help()
 
-        self._ac_project = _extens.fold(stdinout.var('pj_pos', namespace = '__ac__'))
+        self._ac_project = _extens.fold(info.project_path())
         self._ac_tools = _tools
         self._ac_extens = _extens
         self._ac_interfaces = _interfaces

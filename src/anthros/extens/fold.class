@@ -1,8 +1,6 @@
-r'''создаёт из папки объект, который можно использовать как словарь или как объект с атрибутами
-*Внимание, не будет корректно работать, если в одной папке будет два файла с одинаковым названием!'''
-def __init__(self, pos: 'path'): #Поправить недоработку с одинаковыми названиями
+def __init__(self, pos: 'path'):
     pos = simple.smart_path(str(pos))
-    if pos == None: raise Exception('folder does not exist')
+    if pos == None: raise Exception(f'"{str(pos)}" folder does not exist')
     pos = path(pos)
     self.pos = pos
 
